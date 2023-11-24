@@ -1,0 +1,28 @@
+{% extends 'base/main.html' %}
+{%block content  %}
+    <div class="header-bar">
+<h1>Login</h1>
+</div>
+<div class="card-body">
+<form method="POST">
+    {% csrf_token %}
+{#    {{ form.as_p }}#}
+    <h4 style="margin-bottom: 5px;margin-top: -50px">username:</h4>
+     <label id="login-id">{{ from.username.label }}</label>
+    {{ form.username}}
+    <h4 style="margin-bottom: 5px">password:</h4>
+       <label id=login-id>{{ from.password.label }}</label>
+    {{ form.password}}
+
+
+    <input style="margin-top: 15px" class="button" type="submit" value="Login">
+
+</form>
+<p>Don't have an account<a href="{% url 'register' %}"> Register</a></p>
+</div>
+<style>
+
+</style>
+
+
+{% endblock %}
